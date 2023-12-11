@@ -4,7 +4,7 @@ from tkinter import *
 
 window = Tk()
 window.title("Cadastro de Álbuns")
-window.geometry('600x400')
+window.geometry('600x400+350+150')
 
 def salva_valores():
     nomeAlbum = inputNomeAlbum.get()
@@ -13,7 +13,10 @@ def salva_valores():
     albumLancamento = v0.get()
 
     with open('Albuns_Cadastrados.txt', 'a') as albunsCadastrados:
-        albunsCadastrados.write(f"{nomeAlbum}|{dataLancamento}|{nomeBanda}|{albumLancamento}\n")
+        if albumLancamento == 0:
+            albunsCadastrados.write(f"{nomeAlbum}|{dataLancamento}|{nomeBanda}|Não\n")
+        else:
+            albunsCadastrados.write(f"{nomeAlbum}|{dataLancamento}|{nomeBanda}|Sim\n")
 
 labelNomeAlbum = Label(window, text= 'Nome do Álbum: ')
 labelNomeAlbum.grid(column= 0, row= 0, sticky= W)

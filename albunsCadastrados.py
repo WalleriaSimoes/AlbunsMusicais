@@ -15,9 +15,7 @@ with open('Albuns_Cadastrados.txt', 'r') as cadastros:
             lista_dados.append(lista_respostas[n].split('|'))
 
     for x in range(0, len(lista_dados)):
-        if lista_dados[x][3] == 1:
-            Label(window, text= f"Nome do Álbum: {lista_dados[x][0]}, Ano de Lançamento: {lista_dados[x][1]}, Nome da Banda/Artista: {lista_dados[x][2]}, Álbum lançamento: Sim").pack()
-        else:
-            Label(window, text= f"Nome do Álbum: {lista_dados[x][0]}, Ano de Lançamento: {lista_dados[x][1]}, Nome da Banda/Artista: {lista_dados[x][2]}, Álbum lançamento: Não").pack()
+
+        Label(window, text= f"Nome do Álbum: {lista_dados[x][0]}, Ano de Lançamento: {lista_dados[x][1]}, Nome da Banda/Artista: {lista_dados[x][2]}, Álbum lançamento: {lista_dados[x][3]}").pack()
 
 window.mainloop()
